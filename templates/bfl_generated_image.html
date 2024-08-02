@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}生成された画像{% endblock %}
+
+{% block content %}
+<div class="generated-image-page">
+    <h1>生成された画像</h1>
+    <p>画像ID: {{ image_id }}</p>
+    <p>シード値: {{ seed }}</p>
+    <img src="{{ image_url }}" alt="Generated Image">
+    <form method="post" action="{{ url_for('download_image', filename=image_id + '.png') }}">
+        <button type="submit">画像を保存</button>
+    </form>
+</div>
+{% endblock %}
