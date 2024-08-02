@@ -388,8 +388,8 @@ def bfl_generated_image():
     image_url = request.args.get('image_url')
     return render_template('bfl_generated_image.html', image_id=image_id, seed=seed, image_url=image_url)
 
-@app.route('/download_image/<filename>', methods=['POST'])
-def download_image(filename):
+@app.route('/download_image_bfl/<filename>', methods=['POST'])
+def download_image_bfl(filename):
     return send_file(f'static/{filename}', as_attachment=True)
 
 @app.route('/generate', methods=['GET', 'POST'])
